@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+{% block content %}
+    <form method = "POST" class="post-form"
+          action="{% url 'movie:edit-movie' movie.id %}">
+          {% csrf_token %}
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">
+                Movie Id:
+            </label>
+            <input type="text" name="id" id="id" class="form-control" required maxlength="20" value="{{ movie.id }}"/>
+        </div>
+    </form>
+
+{% endblock %}

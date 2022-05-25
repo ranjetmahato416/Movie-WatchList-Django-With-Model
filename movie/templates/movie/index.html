@@ -1,0 +1,40 @@
+{% extends 'master.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-3">
+            <h1>This is First and it is movie page code</h1>
+            <a class="btn btn-primary"
+               href="{% url 'movie:create-movie' %}">
+                create
+            </a>
+            <table class="table-hover">
+                <tr>
+                    <th>No.</th>
+                    <th>Actor</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    <th>IMDB Rating</th>
+                </tr>
+                {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.actor }}</td>
+                    <td>{{ movie.movie_title }}</td>
+                    <td>{{ movie.genre }}</td>
+                    <td>{{ movie.release_date }}</td>
+                    <td>{{ movie.imdb }}</td>
+                    <td><a href="{% url 'movie:edit-movie' %}">
+                        Edit
+                    </a>
+                    </td>
+                    <td><a href="#">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
