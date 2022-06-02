@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie WatchList</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+        th, td {
+        background-color: #96D4D4;
+        }
+        .container
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-container">
+           <table>
+                <ul>
+                    <th>Movie Title</th>
+                    <th>Genre</th>
+                    <th>Actor</th>
+                    <th>Release Date</th>
+                    <th>IMDB</th>
+                </ul>
+                <ol>
+                    {% for d in moviesData %}
+                    <tr>
+                        <td>{{d.movie_title}}</td>
+                        <td>{{d.genre}}</td>
+                        <td>{{d.actor}}</td>
+                        <td>{{d.release_date}}</td>
+                        <td>{{d.imdb}}</td>
+                    </tr>
+                    {% endfor%}
+                </ol>
+           </table>
+        </div>
+    </div>
+    
+</body>
+</html>

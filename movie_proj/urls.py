@@ -19,7 +19,8 @@ from .import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.master),
+    path('', views.index),
+    path('master', views.master),
     path('movie/', include('movie.urls')),
     #path('movie/', views.movie),
 ]
